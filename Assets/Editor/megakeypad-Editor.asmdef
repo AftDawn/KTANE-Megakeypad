@@ -1,0 +1,10 @@
+{
+  "name": "megakeypad-Editor",
+  "references": [
+    "megakeypad"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": []
+}
