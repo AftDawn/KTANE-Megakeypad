@@ -38,7 +38,7 @@ public class megakeypad : MonoBehaviour
 		foreach (KMSelectable key in keypad)
 		{
 			KMSelectable pressedkey = key;
-			key.OnInteract += delegate () { HandleKey(pressedkey); return false; };
+			key.OnInteract += delegate () {HandleKey(pressedkey); return false; };
 		}
 	}
 
@@ -46,12 +46,11 @@ public class megakeypad : MonoBehaviour
 	void Start ()
 	{
 		Debug.LogFormat("[Megakeypad #{0}] Hello World!", moduleId);
-		Determine2x3KeyGrid("TL");
 	}
 
 	void Determine2x3KeyGrid(string quadrent)
 	{
-		return;
+		
 	}
 
 	void AvoidCollisions()
@@ -68,11 +67,10 @@ public class megakeypad : MonoBehaviour
 
 	void HandleKey(KMSelectable key)
 	{
-
 		//fix name into something alot more human readable, like a coordinet system!
 		
 		Vector2 keycoords = GetCoordsFromKeyName(key);
 
-		Debug.LogFormat("[Megakeypad #{0}] Pressed key at {1}/{2}.", moduleId, keycoords.x, keycoords.y);
+		Debug.LogFormat("[Megakeypad #{0}] Pressed key at [{1},{2}].", moduleId, keycoords.x, keycoords.y);
 	}
 }
