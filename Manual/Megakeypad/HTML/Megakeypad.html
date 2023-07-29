@@ -21,6 +21,29 @@
             fill:transparent;
         }
 
+        /* sorry for the hacky way of making the SVG look like it's using "tight" from MS Word, but this is the best i got and this whole module needs to be done in 2 days from writing this sooooo */
+        table.keypad-hidden-grid p {
+            margin-bottom: 4em;
+            margin-top: 0;
+        }
+
+        table.grid {
+            margin-top: 5em;
+        }
+
+        table.grid td {
+            border-top-width: thick;
+            border-bottom-width: thick;
+        }
+
+        table.grid tr:nth-child(1n) td:nth-child(3n+1) {border-left-width: thick;}
+        table.grid tr:nth-child(1n) td:nth-child(3n) {border-right-width: thick;}
+
+        img.keypad-symbol-image {
+                width: 10mm;
+                height: 10mm;
+            }
+
         svg rect.keypad.thick { stroke-width:5; }
         svg rect.keypad.thin { stroke-width:1; }
 
@@ -45,7 +68,7 @@
                 <p>The module contains 24 keys each with a symbol.</p>
 
                 <p>The 4 2x3 subsections of the keypad grid each contain two groups of three symbols that need to be pressed in reading order of the table below, and whose individual symbols need to be pressed in order from left to right as they appear in the table.</p>
-                <table>
+                <table class="keypad-hidden-grid">
                     <tr>
                         <td class="empty nohighlight">
                             <svg class="keypad">
@@ -72,7 +95,96 @@
                     </tr>
                 </table>
 
-                <!--this is where the solving table will go-->
+                <table class="grid">
+                    <tr>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                        <td><img class="keypad-symbol-image" src="img/Megakeypad/"></td>
+                    </tr>
+                </table>
             </div>
             <div class="page-footer relative-footer">1</div>
         </div>
