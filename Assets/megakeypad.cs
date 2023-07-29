@@ -25,10 +25,27 @@ public class megakeypad : MonoBehaviour
 		{  "9",  "3", "20" }, {  "1",  "8", "33" }, {  "2", "18", "21" }
 	};
 
+	static string moduleName = "Megakeypad";
+
 	static int moduleIdCounter = 1;
 	int moduleId = 0;
 	private bool moduleSolved = false;
 
+
+	void Logger(string logMessage)
+	{
+		Debug.LogFormat("[{0} #{1}] {2}", moduleName, moduleId, logMessage);
+	}
+
+	void LoggerKeypress(Vector2 keycoords)
+	{
+		Logger(String.Format("Pressed key at [{0}, {1}]", keycoords.x, keycoords.y));
+	}
+
+	void LoggerTitleAndInfo()
+	{
+		Logger("Module is set up! Pressed keypad coordinates are going to be laid out as [Row, Column] (think: \"Crawl before you Climb\").");
+	}
 
 
 	void Awake ()
@@ -45,15 +62,15 @@ public class megakeypad : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		Debug.LogFormat("[Megakeypad #{0}] Hello World!", moduleId);
+		LoggerTitleAndInfo();
 	}
 
-	void Determine2x3KeyGrid(string quadrent)
+	void Determine2x3KeyGrid()
 	{
-		
+
 	}
 
-	void AvoidCollisions()
+	void AvoidSymbolCollisions()
 	{
 
 	}
@@ -62,15 +79,13 @@ public class megakeypad : MonoBehaviour
 	{
 		string kpname = kp.name;
 		string[] kpcoords = kpname.Split('_');
-		return new Vector2(int.Parse(kpcoords[1]), int.Parse(kpcoords[2]));
+		return new Vector2(int.Parse(kpcoords[2]), int.Parse(kpcoords[1]));
 	}
 
 	void HandleKey(KMSelectable key)
-	{
-		//fix name into something alot more human readable, like a coordinet system!
-		
-		Vector2 keycoords = GetCoordsFromKeyName(key);
-
-		Debug.LogFormat("[Megakeypad #{0}] Pressed key at [{1},{2}].", moduleId, keycoords.x, keycoords.y);
+	{		
+		LoggerKeypress(GetCoordsFromKeyName(key));
 	}
+
+	
 }

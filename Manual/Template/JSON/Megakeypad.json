@@ -1,0 +1,20 @@
+{
+  "Compatibility": "Compatible",
+  "Contributors": {
+    "Developer": [ "AftDawn" ],
+    "Idea": [ "Panoptes (Xel)" ]
+  },
+  "DefuserDifficulty": "Easy",
+  "Description": "Press twenty four confusing symbols in order.",
+  "ExpertDifficulty": "Easy",
+  "ModuleID": "megakeypad",
+  "Name": "Megakeypad",
+  "Origin": "Mods",
+  "Published": "2023-07-29",
+  "SortKey": "MEGAKEYPAD",
+  "SourceUrl": "https://github.com/AftDawn/KTANE-Megakeypad",
+  "Souvenir": { "Status": "NotACandidate" },
+  "SteamID": "[STEAM WORKSHOP ID GOES HERE]",
+  "Symbol": "Mkp",
+  "Type": "Regular"
+}
