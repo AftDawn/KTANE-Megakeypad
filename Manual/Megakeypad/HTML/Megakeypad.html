@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Megakeypad — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        .dark table, table {
+            margin: 1em auto;
+            border: none;
+        }
+
+        svg.keypad { width: 200px; height: 100px; }
+              
+        svg.keypad rect {
+            stroke: #000;
+            fill:transparent;
+        }
+
+        svg rect.keypad.thick { stroke-width:5; }
+        svg rect.keypad.thin { stroke-width:1; }
+
+        .dark svg.keypad rect { stroke: #DDD; }
+
+        .page-footer::before { content: 'Page '; }
+        .page-footer::after { content: ' of 1'; }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Megakeypad</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Megakeypad.svg" class="diagram">
+                <h2>On the Subject of Megakeypad</h2>
+                <p class="flavour-text">Twenty-four? TWENTY-FOUR!?</p>
+
+                <p>The module contains 24 keys each with a symbol.</p>
+
+                <p>The 4 2x3 subsections of the keypad grid each contain two groups of three symbols that need to be pressed in reading order of the table below, and whose individual symbols need to be pressed in order from left to right as they appear in the table.</p>
+                <table>
+                    <tr>
+                        <td class="empty nohighlight">
+                            <svg class="keypad">
+                                <!-- horizontal thin bars -->
+                                <rect width="97.5" height="0.001" x="100" y="27.5" class="keypad thin nohighlight"/>
+                                <rect width="97.5" height="0.001" x="2.5" y="27.5" class="keypad thin nohighlight"/>
+                                <rect width="97.5" height="0.001" x="100" y="72.5" class="keypad thin nohighlight"/>
+                                <rect width="97.5" height="0.001" x="2.5" y="72.5" class="keypad thin nohighlight"/>
+                                <!-- vertical thin bars -->
+                                <rect width="0.001" height="95" x="33.3" y="2.5" class="keypad thin nohighlight"/>
+                                <rect width="0.001" height="95" x="66.6" y="2.5" class="keypad thin nohighlight"/>
+                                <rect width="0.001" height="95" x="133.3" y="2.5" class="keypad thin nohighlight"/>
+                                <rect width="0.001" height="95" x="166.6" y="2.5" class="keypad thin nohighlight"/>
+                                <!-- thick border + highlightable -->
+                                <rect width="97.5" height="47.5" x="2.5" y="2.5" class="keypad thick highlightable"/>
+                                <rect width="97.5" height="47.5" x="2.5" y="50" class="keypad thick highlightable"/>
+                                <rect width="97.5" height="47.5" x="100" y="2.5" class="keypad thick highlightable"/>
+                                <rect width="97.5" height="47.5" x="100" y="50" class="keypad thick highlightable"/>
+                            </svg>
+                        </td>
+                        <td class="empty nohighlight">
+                            <p>Pressing a symbol out of order will record a strike and clear your entire input.</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <!--this is where the solving table will go-->
+            </div>
+            <div class="page-footer relative-footer">1</div>
+        </div>
+    </div>
+</body>
+</html>
