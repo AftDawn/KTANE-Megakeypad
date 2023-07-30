@@ -13,6 +13,7 @@ public class megakeypad : MonoBehaviour
 
 	public KMSelectable[] keypad;
 	public Material[] keypadLedMats;
+	public Material[] keypadLabelMats;
 
 	int[,] keypadSolvingArray = new int[ , ] { 
 		{  1,  2,  3 }, {  4,  5,  6 }, {  7,  8,  9 },
@@ -44,10 +45,10 @@ public class megakeypad : MonoBehaviour
 		Logger(String.Format("Pressed key at [{0}, {1}]", keycoords.x, keycoords.y));
 	}
 
-	void LoggerTitleAndInfo()
-	{
-		Logger("Module is set up! Pressed keypad coordinates are going to be laid out as [Row, Column] (think: \"Crawl before you Climb\").");
-	}
+	// void LoggerTitleAndInfo()
+	// {
+	// 	Logger("Module is set up! Pressed keypad coordinates are going to be laid out as [Row, Column] (think: \"Crawl before you Climb\").");
+	// }
 
 
 	void Awake ()
@@ -64,12 +65,45 @@ public class megakeypad : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		LoggerTitleAndInfo();
+		// LoggerTitleAndInfo();
+
+		foreach (KMSelectable key in keypad)
+		{
+			SetLabel(key, RNG.Range(0,36));
+		}
+
 	}
 
-	void PickSymbols()
+	void Set2x3Quadrant(string Quadrant)
 	{
+		switch (Quadrant)
+		{
+			case "TL":
+			{
 
+				break;
+			};
+			case "TR":
+			{
+				
+				break;
+			};
+			case "BL":
+			{
+					
+				break;
+			};
+			case "BR":
+			{
+				
+				break;
+			};
+		}
+	}
+
+	void SetLabel(KMSelectable key, int labelIndex)
+	{
+		key.transform.Find("label").GetComponent<MeshRenderer>().material = keypadLabelMats[labelIndex];
 	}
 
 	void AvoidSymbolCollisions()
@@ -87,7 +121,7 @@ public class megakeypad : MonoBehaviour
 
 	}
 
-	Vector2 GetCoordsFromKeyName(KMSelectable kp)
+		Vector2 GetCoordsFromKeyName(KMSelectable kp)
 	{
 		string kpname = kp.name;
 		string[] kpcoords = kpname.Split('_');
@@ -97,6 +131,13 @@ public class megakeypad : MonoBehaviour
 	void HandleKey(KMSelectable key)
 	{		
 		LoggerKeypress(GetCoordsFromKeyName(key));
+
+		SetLabel(key, RNG.Range(0,36));
+
+		// key.transform.Find("label").GetComponent<MeshRenderer>().material = keypadLabelMats[RNG.Range(0,37)];
+
+		// keyLabel.Material = keypadLabelMats[RNG.Range(0,24)];
+
 	}
 
 	
