@@ -15,7 +15,7 @@ public class megakeypad : MonoBehaviour
 	public Material[] keypadLedMats;
 	public Material[] keypadLabelMats;
 
-	int[,] keypadSolvingArray = new int[ , ] { 
+	int[,] keypadSolvingArray = new int[24,3] { 
 		{  1,  2,  3 }, {  4,  5,  6 }, {  7,  8,  9 },
 		{ 10, 11, 12 }, { 13, 14, 15 }, { 16, 17, 18 },
 		{ 19, 20, 21 }, { 22, 23, 24 }, { 25,  5, 26 },
@@ -26,7 +26,7 @@ public class megakeypad : MonoBehaviour
 		{  9,  3, 20 }, {  1,  8, 32 }, {  2, 18, 21 }
 	};
 
-	int[,] keypadAssignedSymbols = new int[6,4];
+	int[] keypadAssignedSymbols = new int[24];
 
 	static string moduleName = "Megakeypad";
 
@@ -40,16 +40,12 @@ public class megakeypad : MonoBehaviour
 		Debug.LogFormat("[{0} #{1}] {2}", moduleName, moduleId, logMessage);
 	}
 
-	void LoggerKeypress(Vector2 keycoords)
+	void LoggerKeypress(KMSelectable key)
 	{
-		Logger(String.Format("Pressed key at [{0}, {1}]", keycoords.x, keycoords.y));
+		string kpname = kp.name;
+		string[] kpcoords = kpname.Split('_');
+		Logger(String.Format("Pressed key at [{0}, {1}]", keycoords[1], keycoords[2]));
 	}
-
-	// void LoggerTitleAndInfo()
-	// {
-	// 	Logger("Module is set up! Pressed keypad coordinates are going to be laid out as [Row, Column] (think: \"Crawl before you Climb\").");
-	// }
-
 
 	void Awake ()
 	{
@@ -62,83 +58,39 @@ public class megakeypad : MonoBehaviour
 		}
 	}
 
-	// Use this for initialization
 	void Start ()
 	{
-		// LoggerTitleAndInfo();
 
-		foreach (KMSelectable key in keypad)
-		{
-			SetLabel(key, RNG.Range(0,36));
-		}
+		SetAll2x3Quadrants();
+		// Set2x3Quadrant(2);
+		// Set2x3Quadrant(3);
+		// Set2x3Quadrant(4);
+
 
 	}
 
-	void Set2x3Quadrant(string Quadrant)
+	void SetAll2x3Quadrants()
 	{
-		switch (Quadrant)
+		for (int i = 0; i < 24; i++)
 		{
-			case "TL":
-			{
-
-				break;
-			};
-			case "TR":
-			{
-				
-				break;
-			};
-			case "BL":
-			{
-					
-				break;
-			};
-			case "BR":
-			{
-				
-				break;
-			};
+			SetLabel(keypad[i], keypadSolvingArray[0, 0]);
 		}
 	}
 
 	void SetLabel(KMSelectable key, int labelIndex)
 	{
-		key.transform.Find("label").GetComponent<MeshRenderer>().material = keypadLabelMats[labelIndex];
-	}
-
-	void AvoidSymbolCollisions()
-	{
-
-	}
-
-	void Complete()
-	{
-
-	}
-
-	void Strike()
-	{
-
-	}
-
-		Vector2 GetCoordsFromKeyName(KMSelectable kp)
-	{
-		string kpname = kp.name;
-		string[] kpcoords = kpname.Split('_');
-		return new Vector2(int.Parse(kpcoords[2]), int.Parse(kpcoords[1]));
+		key.transform.Find("label").GetComponent<MeshRenderer>().material = keypadLabelMats[labelIndex-1];
 	}
 
 	void HandleKey(KMSelectable key)
 	{		
-		LoggerKeypress(GetCoordsFromKeyName(key));
+		LoggerKeypress(key);
 
-		SetLabel(key, RNG.Range(0,36));
+		// SetLabel(key, RNG.Range(0,36));
 
 		// key.transform.Find("label").GetComponent<MeshRenderer>().material = keypadLabelMats[RNG.Range(0,37)];
 
 		// keyLabel.Material = keypadLabelMats[RNG.Range(0,24)];
 
 	}
-
-	
 }
