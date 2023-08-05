@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: megakeypad
   title: Megakeypad
-  author: AftDawn and PANOPTES
+  author: AftDawn, Yewchung and PANOPTES
   description: Press twenty four confusing symbols in order.
   version: 1.0.0
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 604f023d88af64c368ef220d0d276406, type: 3}
